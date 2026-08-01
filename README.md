@@ -1,4 +1,4 @@
-### Astrophysics Projects
+# Astrophysics Projects
 
 ## Blackbody Radiation
 
@@ -8,7 +8,7 @@ This project models stellar radiation using Planck's Law. It calculates blackbod
 ## Real Data
 The code in real_data.py shows actual data of known exoplanets directly from NASA. 
 
-# Exoplanet mass and radius plot
+### Exoplanet mass and radius plot
 The code produces a graph of the exoplanet's mass against its radius in Earth units (Earth mass and Earth radii).
 
 - In the graph it is clear that there is many more exoplanets detected by the Transit Method (cyan) which cluster around small-radius/low mass.

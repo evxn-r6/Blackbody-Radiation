@@ -36,3 +36,22 @@ plt.xscale('log')
 plt.yscale('log')
 plt.legend(fontsize=8)
 plt.show()
+
+# Stacked histogram of discovery methods over the years
+plt.figure(figsize=(10, 6))
+methods = df_clean['discoverymethod'].unique()
+
+# Keeping meaningful discovery methods for the histogram to reduce clutter
+counts_by_method = df_clean['discoverymethod'].value_counts()
+meaningful_methods = counts_by_method[counts_by_method > 20].index.tolist()
+
+df_plot =df_clean[df_clean['discoverymethod'].isin(meaningful_methods)]
+pivot = df_plot.groupby(['disc_year', 'discoverymethod']).size().unstack(fill_value=0)
+pivot.plot(kind='bar', stacked=True, figsize=(12, 6))
+
+plt.xlabel('Discovery Year')
+plt.ylabel('Number of Exoplanets Discovered')
+plt.title('Exoplanet Discoveries by Method Over Time')
+plt.legend(title='Discovery Method', fontsize=8)
+plt.tight_layout()
+plt.show()
