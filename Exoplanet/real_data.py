@@ -9,6 +9,7 @@ data_dir = base_dir / "data"
 
 data_dir.mkdir(exist_ok=True)
 
+# Query the NASA Exoplanet Archive for relevant data
 table = NasaExoplanetArchive.query_criteria(
     table="pscomppars",
     select="pl_name, hostname, pl_bmasse, pl_rade, pl_orbper, discoverymethod, disc_year, st_teff, st_rad"
@@ -17,6 +18,7 @@ df = table.to_pandas()
 df.to_csv(data_dir / "exoplanet_data.csv", index=False)
 print(df.shape)
 
+# Clean the data
 cols = ["pl_name", "hostname", "pl_bmasse", "pl_rade", "pl_orbper", "discoverymethod", "disc_year", "st_teff", "st_rad"]
 df_clean=df[cols].copy()
 
