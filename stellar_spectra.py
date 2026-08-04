@@ -29,5 +29,4 @@ plt.ylabel('Relative Intensity (W/m²/nm/sr)')
 plt.title('Blackbody Spectra of Different Stars')
 plt.legend()
 plt.grid()
-
 plt.show()
