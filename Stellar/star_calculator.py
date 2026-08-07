@@ -5,19 +5,19 @@ from astropy.constants import L_sun
 # This module provides functions to calculate the properties of stars based on their temperature and radius.
 
 def peak_wavelength(temperature):
-    """
-    Calculate the peak wavelength of a star's emission using Wien's displacement law.
+    
+    # Calculate the peak wavelength of a star's emission using Wien's displacement law.
 
-    Temperature: Kelvin (K).
-    """
+    # Temperature: Kelvin (K).
+    
     wavelength = Wien / temperature
 
     return wavelength *1e9  # Convert to nanometers
 
 def star_colour(wavelength):
-    """
-    Calculate the colour of a star based on its peak wavelength.
-    """
+    
+    # Calculate the colour of a star based on its peak wavelength.
+    
     if wavelength < 400:
         return "Ultraviolet"
     elif wavelength < 450:
@@ -36,21 +36,21 @@ def star_colour(wavelength):
         return "Infrared"
 
 def luminosity(radius, temperature):
-    """
-    Calculate the luminosity of a star using the Stefan-Boltzmann law.
 
-    Radius: Metres (m) and temperature: Kelvin (K).
-    """
+    # Calculate the luminosity of a star using the Stefan-Boltzmann law.
+
+    # Radius: Metres (m) and temperature: Kelvin (K).
+    
     luminosity = 4 * np.pi * radius**2 * sigma * temperature**4
 
     return luminosity
 
 def absmagnitude(luminosity):
-    """
-    Calculate the absolute magnitude of a star based on its luminosity.
     
-    Luminosity: Watts (W).
-    """
+    # Calculate the absolute magnitude of a star based on its luminosity.
+    
+    # Luminosity: Watts (W).
+
     absmagnitude = -2.5 * np.log10(luminosity / L_sun.value)
 
     return absmagnitude
