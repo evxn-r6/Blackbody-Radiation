@@ -10,6 +10,7 @@ data_dir = base_dir / "data"
 data_dir.mkdir(exist_ok=True)
 
 # Query the Gaia Archive for relevant data
+
 query = """ SELECT source_id, ra, parallax, parallax_error, phot_g_mean_mag, bp_rp, phot_bp_mean_mag, phot_rp_mean_mag
             FROM gaiadr3.gaia_source
             WHERE 1=CONTAINS(
